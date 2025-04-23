@@ -1,0 +1,126 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3c4a8 0%, #f5e1d0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(139, 95, 67, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    position: relative;
+}
+
+.avatar-fallback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #c8a080 0%, #e6ccb2 100%);
+    border-radius: 50%;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.link-button {
+    background: linear-gradient(45deg, #b08968 0%, #d4b595 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(139, 95, 67, 0.15), 0 3px 6px rgba(139, 95, 67, 0.1);
+    background: linear-gradient(45deg, #c8a080 0%, #e6ccb2 100%);
+}
+
+.link-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e3c4a8 0%, #f5e1d0 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.link-button:hover:after {
+    opacity: 0.3;
+}
+
+.link-button > * {
+    position: relative;
+    z-index: 1;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(139, 95, 67, 0.2);
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    background-color: #f5e1d0;
+    border-color: #d4b595;
+}
+
+/* Continuous shake animation for 7-11 button */
+@keyframes continuous-shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+.continuous-shake {
+    animation: continuous-shake 1s ease-in-out infinite;
+}
+
+/* Share button styles and animation */
+.share-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(45deg, #b08968 0%, #d4b595 100%);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(139, 95, 67, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(139, 95, 67, 0.25);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(176, 137, 104, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(176, 137, 104, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(176, 137, 104, 0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
